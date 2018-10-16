@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ADOBE SYSTEMS INCORPORATED
+
+ Copyright 2014 Adobe Systems Incorporated
+
+ All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in accordance
+with the terms of the Adobe license agreement accompanying it. If you have received
+this file from a source other than Adobe, then your use, modification, or distribution
+of it requires the prior written permission of Adobe.
+	
+-->
+<xmp_definitions>
+  <!-- Defining the namespace and prefix of the schema --> 	
+	<xmp_schema prefix='egGr' namespace='http://ns.esko-graphics.com/grinfo/1.0/' label='Esko Graphic Schema' description='This is Esko Graphic Schema'>
+		
+		<!-- Starting defining the properties, for definition of different attribute please refer documentation -->
+
+		<xmp_property name='trapped' category='internal' type='boolean' label="$$$/egGr/Property/trappedBooleanInputLabel=Trapped"  description='$$$/egGr/Property/trappedBooleanInputDescription=Graphic trapping'/>
+		
+		<xmp_property name='nrpages' category='internal' type='integer' label="$$$/egGr/Property/nrpagesIntegerInputLabel=Number of Pages"  description='$$$/egGr/Property/nrpagesIntegerInputDescription=Number of document pages'/>
+		
+		<xmp_property name='startlogpage' category='internal' type='integer' label="$$$/egGr/Property/startlogpageIntegerInputLabel=Start Page"  description='$$$/egGr/Property/startlogpageIntegerInputDescription=Number of start page'/>
+		
+		<xmp_property name='units' category='external'  type='closedchoice' element_type='text' 
+		label="$$$/egGr/Property/unitsClosedChoiceInputLabel=Units"  description='$$$/egGr/Property/unitsClosedChoiceInputDescription=Document units'>
+			<xmp_choice raw_value="mm" label="$$$/egGr/Property/Choice_Mm=mm"/>
+			<xmp_choice raw_value="cm" label="$$$/egGr/Property/Choice_Cm=cm"/>
+			<xmp_choice raw_value="inch" label="$$$/egGr/Property/Choice_Inch=inch"/>
+			<xmp_choice raw_value="pt" label="$$$/egGr/Property/Choice_Pt=pt"/>
+		</xmp_property>
+
+		<xmp_property name='vsize' category='internal' type='real' label="$$$/egGr/Property/vsizeRealInputLabel=Vertical size"  description='$$$/egGr/Property/vsizeRealInputDescription=Vertical size of document'/>
+
+		<xmp_property name='hsize' category='internal' type='real' label="$$$/egGr/Property/hsizeRealInputLabel=Horizontal size"  description='$$$/egGr/Property/hsizeRealInputDescription=Horizontal size of document'/>
+		
+		<xmp_property name='margtop' category='internal' type='real' label="$$$/egGr/Property/margtopRealInputLabel=Top Margin"  description='$$$/egGr/Property/margtopRealInputDescription=Top Margin of document'/>
+	
+		<xmp_property name='margbot' category='internal' type='real' label="$$$/egGr/Property/margbotRealInputLabel=Bottom Margin"  description='$$$/egGr/Property/margbotRealInputDescription=Bottom Margin of document'/>
+	
+		<xmp_property name='margleft' category='internal' type='real' label="$$$/egGr/Property/margleftRealInputLabel=Left Margin"  description='$$$/egGr/Property/margleftRealInputDescription=Left Margin of document'/>
+	
+		<xmp_property name='margright' category='internal' type='real' label="$$$/egGr/Property/margrightRealInputLabel=Right Margin"  description='$$$/egGr/Property/margrightRealInputDescription=Right Margin of document'/>
+	
+		<xmp_property name='vshrink' category='internal' type='real' label="$$$/egGr/Property/vshrinkRealInputLabel=Vertical Shrink"  description='$$$/egGr/Property/vshrinkRealInputDescription=Vertical Shrink of document'/>
+	
+		<xmp_property name='hshrink' category='internal' type='real' label="$$$/egGr/Property/hshrinkRealInputLabel=Horizontal Shrink"  description='$$$/egGr/Property/hshrinkRealInputDescription=Horizontal Shrink of document'/>
+		
+		<xmp_property name='readerspread' category='internal' type='boolean' label="$$$/egGr/Property/readerspreadBooleanInputLabel=Reader Spread"  description='$$$/egGr/Property/readerspreadBooleanInputDescription=Reader Spread'/>
+	
+		<xmp_property name='screenreg' category='internal' type='boolean' label="$$$/egGr/Property/screenregBooleanInputLabel=Screen Registration"  description='$$$/egGr/Property/screenregBooleanInputDescription=Screen Registration'/>
+
+		<xmp_property name="inks" category='external' type="seq" element_type="ink_type" label='$$$/egGr/Property/inksArrOfStructInputLabel=Inks' description='$$$/egGr/Property/inksArrOfStructDescription=Array of Inks'/>
+		
+	</xmp_schema> <!-- Schema Definition ends here -->
+  
+	<!-- Defining Composed Types -->
+	
+	<xmp_type name='ink_type' description='$$$/egGr/Property/inkTypeDescription=Ink Structure' label='$$$/egGr/Property/inkTypeLabel=Ink Type'>
+	  
+		<xmp_field name='name' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='text' label='$$$/egInk/Property/nameLabel=Name' description='$$$/egInk/Property/nameDescription=Ink Name'/>
+		
+		<xmp_field name='type' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='text' label='$$$/egInk/Property/typeLabel=Type' description='$$$/egInk/Property/typeDescription=Ink Type'/>
+		
+		<xmp_field name='book' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='text' label='$$$/egInk/Property/bookLabel=Book' description='$$$/egInk/Property/bookDescription=Ink Type'/>
+		
+		<xmp_field name='egname' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='text' label='$$$/egInk/Property/egNameLabel=Esko Name' description='$$$/egInk/Property/egNameDescription=Esko Ink Name'/>
+
+		<xmp_field name='frequency' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='real' label='$$$/egInk/Property/frequencyLabel=Frequency' description='$$$/egInk/Property/frequencyDescription=Raster Frequency'/>
+		
+		<xmp_field name='angle' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='real' label='$$$/egInk/Property/angleLabel=Angle' description='$$$/egInk/Property/angleDescription=Raster Angle'/>
+		
+		<xmp_field name='dotshape' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='text' label='$$$/egInk/Property/dotshapeLabel=Dotshape' description='$$$/egInk/Property/dotshapeDescription=Raster Dotshape'/>
+		
+		<xmp_field name='attribute' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='text' label='$$$/egInk/Property/attributeLabel=Attribute' description='$$$/egInk/Property/attributeDescription=Ink Attribute'/>
+		
+		<xmp_field name='printingmethod' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='text' label='$$$/egInk/Property/printingmethodLabel=Printing Method' description='$$$/egInk/Property/printingmethodDescription=Ink Printing Method'/>
+		
+		<xmp_field name='r' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='real' label='$$$/egInk/Property/rLabel=Red' description='$$$/egInk/Property/rDescription=Red Item of Color'/>
+		
+		<xmp_field name='g' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='real' label='$$$/egInk/Property/gLabel=Green' description='$$$/egInk/Property/gDescription=Green Item of Color'/>
+		
+		<xmp_field name='b' prefix='egInk' namespace='http://ns.esko-graphics.com/inkinfo/1.0/' type='real' label='$$$/egInk/Property/bLabel=Blue' description='$$$/egInk/Property/bDescription=Blue Item of Color'/>
+		
+	</xmp_type>
+  
+</xmp_definitions>

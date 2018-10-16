@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ADOBE SYSTEMS INCORPORATED
+
+ Copyright 2014 Adobe Systems Incorporated
+
+ All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in accordance
+with the terms of the Adobe license agreement accompanying it. If you have received
+this file from a source other than Adobe, then your use, modification, or distribution
+of it requires the prior written permission of Adobe.
+-->
+
+<views xmlns="http://ns.adobe.com/metadata/ui/1.0/"> <!--Including the default namespace is a must -->
+<!-- Views can have multiple views (panels) -->
+	
+	<!-- This wbc view displays all the properties of wbcSchema -->	
+	<view
+		xmlns:wbcSchema="http://my.wbcSchema.namespace/" 
+		name="wbc.allPropertiesView"
+		label="$$$/wbcSchema/Property/wbcAllPropsViewLabel=Web Center"
+		description="$$$/wbcSchema/Property/wbcAllPropsViewDescription=This view displays the properties defined in the wbcSchema">
+		
+		<section label="Identification" type="labelled">
+			<property name="wbcSchema:projectName" />
+			<property name="wbcSchema:customerID" />
+			<property name="wbcSchema:projectNumber" />
+		</section>
+		<section label="Material" type="labelled">
+			<property name="wbcSchema:stbCode" />
+			<property name="wbcSchema:primer" />
+			<property name="wbcSchema:finishing" />
+		</section>
+		<property name="wbcSchema:logo" />
+		<property name="wbcSchema:sapDescription" multiLines="4" />	
+		
+	</view>
+	
+</views>

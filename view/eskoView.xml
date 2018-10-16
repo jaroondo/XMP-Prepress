@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ADOBE SYSTEMS INCORPORATED
+
+ Copyright 2014 Adobe Systems Incorporated
+
+ All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in accordance
+with the terms of the Adobe license agreement accompanying it. If you have received
+this file from a source other than Adobe, then your use, modification, or distribution
+of it requires the prior written permission of Adobe.
+-->
+
+<views xmlns="http://ns.adobe.com/metadata/ui/1.0/"> <!--Including the default namespace is a must -->
+<!-- Views can have multiple views (panels) -->
+	
+	<!-- This view use ESKO Graphic schema -->
+	<view
+		xmlns:egGr="http://ns.esko-graphics.com/grinfo/1.0/"
+		name="esko.graphic"
+		label="$$$/egGr/Property/eskoGraphicViewLabel=Esko Graphic"
+		description="$$$/egGr/Property/eskoGraphicViewDescription=This view use Esko Graphic schema">
+		
+		<property name="egGr:trapped" />
+		<property name="egGr:nrpages" />
+		<property name="egGr:startlogpage" />
+		<property name="egGr:units" />
+		<separator/>
+		<property name="egGr:vsize" />
+		<property name="egGr:hsize" />
+		<property name="egGr:margtop" />
+		<property name="egGr:margbot" />
+		<property name="egGr:margleft" />
+		<property name="egGr:margright" />
+		<separator/>
+		<property name="egGr:vshrink" />
+		<property name="egGr:hshrink" />
+		<separator/>
+		<property name="egGr:readerspread" />
+		<property name="egGr:screenreg" />
+		
+	</view>		
+	
+	<view
+		xmlns:egGr="http://ns.esko-graphics.com/grinfo/1.0/"
+		name="esko.inks"
+		label="$$$/egGr/Property/eskoInksViewLabel=Esko Inks"
+		description="$$$/egGr/Property/eskoInksViewDescription=This view use Esko Inks schema">
+		
+		<property name="egGr:inks" />
+		
+	</view>
+	
+</views>

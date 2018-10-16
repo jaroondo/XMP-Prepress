@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ADOBE SYSTEMS INCORPORATED
+
+ Copyright 2014 Adobe Systems Incorporated
+
+ All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in accordance
+with the terms of the Adobe license agreement accompanying it. If you have received
+this file from a source other than Adobe, then your use, modification, or distribution
+of it requires the prior written permission of Adobe.
+	
+-->
+<xmp_definitions>
+  <!-- Defining the namespace and prefix of the schema --> 	
+	<xmp_schema prefix='prePress' namespace='http://my.prepressSchema.namespace/' label='PrePress Schema' description='Schema for PrePress'>
+		
+		<!-- Starting defining the properties, for definition of different attribute please refer documentation -->
+		
+		<xmp_property name='artworkAngle' category='external'  type='openchoice' element_type='real' min='-360' max='360'
+		label="$$$/prePress/Property/artworkAngleInputLabel=Angle" description='$$$/prePress/Property/prePressInputDescription=Rotation angle of artwork'>
+
+			<xmp_choice raw_value="0" label="$$$/prePress/Property/Choice_0=0"/>
+			<xmp_choice raw_value="90" label="$$$/prePress/Property/Choice_0=90"/>
+			<xmp_choice raw_value="-90" label="$$$/prePress/Property/Choice_0=-90"/>
+			<xmp_choice raw_value="180" label="$$$/prePress/Property/Choice_0=180"/>
+		
+		</xmp_property>
+		
+		<xmp_property name='punchNumAngle' category='external'  type='openchoice' element_type='real' min='-360' max='360'
+		label="$$$/prePress/Property/punchNumAngleInputLabel=Angle" description='$$$/prePress/Property/punchNumAngleInputDescription=Rotation angle of punch number'>
+
+			<xmp_choice raw_value="0" label="$$$/prePress/Property/Choice_0=0"/>
+			<xmp_choice raw_value="90" label="$$$/prePress/Property/Choice_0=90"/>
+			<xmp_choice raw_value="-90" label="$$$/prePress/Property/Choice_0=-90"/>
+			<xmp_choice raw_value="180" label="$$$/prePress/Property/Choice_0=180"/>
+		
+		</xmp_property>
+
+		<xmp_property name='punchNumPrint' category='external' type='boolean' label="$$$/prePress/Property/punchNumPrintInputLabel=Print"  description='$$$/prePress/Property/punchNumPrintInputDescription=Printing of punch number'/>
+		
+		<!-- <xmp_property name='logoAngle' category='external'  type='openchoice' element_type='real' min='-360' max='360'
+		label="$$$/prePress/Property/logoAngleInputLabel=Angle" description='$$$/prePress/Property/logoAngleInputDescription=Rotation angle of logo'>
+
+			<xmp_choice raw_value="135" label="$$$/prePress/Property/Choice_CPB=CPB"/>
+			<xmp_choice raw_value="75" label="$$$/prePress/Property/Choice_CPY=CPY"/>
+			<xmp_choice raw_value="-105" label="$$$/prePress/Property/Choice_CPK=CPK"/>
+			<xmp_choice raw_value="20" label="$$$/prePress/Property/Choice_CPS=CPS"/>
+			<xmp_choice raw_value="-165" label="$$$/prePress/Property/Choice_CPF=CPF"/>
+		
+		</xmp_property>
+
+		<xmp_property name='logoPrint' category='external' type='boolean' label="$$$/prePress/Property/logoPrintInputLabel=Print"  description='$$$/prePress/Property/logoPrintInputDescription=Printing of logo'/> -->
+		
+		<xmp_property name='smartInks' category='enternal' type='seq' element_type='smartink_type' label='$$$/prePress/Property/smartInksArrOfStructInputLabel=Smart Inks' description='$$$/prePress/Property/smartInksArrOfStructDescription=Array of Smart Inks'/>
+		
+	</xmp_schema> <!-- Schema Definition ends here -->
+  
+	<!-- Defining Composed Types -->
+	<xmp_type name='smartink_type' description='$$$/prePress/Property/smartInkTypeDescription=Smart Ink Structure' label='$$$/prePress/Property/smartInkTypeLabel=Smart Ink Type'>
+	  
+		<xmp_field name='name' prefix='smartInk' namespace='http://my.prepressSchema.namespace/smartink#' type='text' label='$$$/smartInk/Property/nameLabel=Name' description='$$$/smartInk/Property/nameDescription=smart Ink Name'/>
+		
+		<xmp_field name='coverage' prefix='smartInk' namespace='http://my.prepressSchema.namespace/smartink#' type='real' label='$$$/smartInk/Property/coverageLabel=Coverage' description='$$$/smartInk/Property/coverageDescription=Ink Coverage'/>
+				
+		<xmp_field name='separation' prefix='smartInk' namespace='http://my.prepressSchema.namespace/smartink#' type='closedchoice' element_type='text' label='$$$/smartInk/Property/separationLabel=Separation' description='$$$/smartInk/Property/separationDescription=Character of Ink Separation'>
+			
+			<xmp_choice raw_value="" label="$$$/smartInk/Property/Choice_positive=Negative"/>
+			<xmp_choice raw_value="positive" label="$$$/smartInk/Property/Choice_positive=Positive"/>
+			<!-- <xmp_choice raw_value="negative" label="$$$/smartInk/Property/Choice_positive=Negative"/> -->
+		
+		</xmp_field>
+		
+		<xmp_field name='overprint' prefix='smartInk' namespace='http://my.prepressSchema.namespace/smartink#' type='openchoice' element_type='text' label='$$$/smartInk/Property/overprintLabel=Overprint' description='$$$/smartInk/Property/overprintDescription=Overprinted Ink'>
+			
+			<xmp_choice raw_value="" label="$$$/smartInk/Property/Choice_positive=[ Write color name or select Nothing ]"/>
+			<xmp_choice raw_value="unknown" label="$$$/smartInk/Property/Choice_positive=Nothing"/>
+			
+		</xmp_field>
+		
+	</xmp_type>
+  
+</xmp_definitions>

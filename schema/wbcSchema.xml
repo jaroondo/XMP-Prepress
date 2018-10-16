@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ADOBE SYSTEMS INCORPORATED
+
+ Copyright 2014 Adobe Systems Incorporated
+
+ All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in accordance
+with the terms of the Adobe license agreement accompanying it. If you have received
+this file from a source other than Adobe, then your use, modification, or distribution
+of it requires the prior written permission of Adobe.
+		
+-->
+<xmp_definitions>
+  <!-- Defining the namespace and prefix of the schema --> 	
+	<xmp_schema prefix='wbcSchema' namespace='http://my.wbcSchema.namespace/' label='WebCenter Schema' description='Esko WebCenter Schema'>
+		
+		<xmp_property name='projectName' category='external' type='text' label="$$$/wbcSchema/Property/projectNameLabel=Project Name"  description='$$$/wbcSchema/Property/projectNameDescription=Artwork Name'/>
+		
+		<xmp_property name='customerID' category='external' type='text' label="$$$/wbcSchema/Property/customerIDLabel=Customer ID"  description='$$$/wbcSchema/Property/customerIDDescription=Customer Identification Number'/>
+		
+		<xmp_property name='projectNumber' category='external' type='text' label="$$$/wbcSchema/Property/projectNumberLabel=Project Number"  description='$$$/wbcSchema/Property/projectNumberDescription=Project Number and version'/>
+		
+		<xmp_property name='stbCode' category='external' type='text' label="$$$/wbcSchema/Property/stbCodeLabel=STB Code"  description='$$$/wbcSchema/Property/stbCodeDescription=STB Code'/>
+		
+		<xmp_property name='primer' category='external' type='openchoice' element_type='text' label="$$$/wbcSchema/Property/primerLabel=Primer"  description='$$$/wbcSchema/Property/primerDescription=Base Coating'>
+			<!-- Choices should be provided for Closed Choice property -->
+				<xmp_choice raw_value="No basecoat" label="$$$/wbcSchema/Property/Choice_noBasecoat=No basecoat"/>
+
+				<xmp_choice raw_value="Clear basecoat" label="$$$/wbcSchema/Property/Choice_clearBasecoat=Clear basecoat"/>
+
+				<xmp_choice raw_value="White basecoat" label="$$$/wbcSchema/Property/Choice_whiteBasecoat=White basecoat"/>
+
+				<xmp_choice raw_value="Gold basecoat" label="$$$/wbcSchema/Property/Choice_goldBasecoat=Gold basecoat"/>	
+		</xmp_property>
+		
+		<xmp_property name='finishing' category='external' type='openchoice' element_type='text' label="$$$/wbcSchema/Property/finishingLabel=Finishing"  description='$$$/wbcSchema/Property/finishingDescription=Cover Varnishing'>
+			<!-- Choices should be provided for Closed Choice property -->
+				<xmp_choice raw_value="Standard varnish" label="$$$/wbcSchema/Property/Choice_standardVarnish=Standard varnish"/>
+
+				<xmp_choice raw_value="Standard varnish 2x" label="$$$/wbcSchema/Property/Choice_standardVarnish2x=Standard varnish 2x"/>
+
+				<xmp_choice raw_value="Gold varnish" label="$$$/wbcSchema/Property/Choice_goldVarnish=Gold varnish"/>
+
+				<xmp_choice raw_value="Matt varnish" label="$$$/wbcSchema/Property/Choice_mattVarnish=Matt varnish"/>
+			
+				<xmp_choice raw_value="Adhesive varnish" label="$$$/wbcSchema/Property/Choice_adhesiveVarnish=Adhesive varnish"/>
+		</xmp_property>
+		
+		<xmp_property name='logo' category='external' type='closedchoice' element_type='real' label="$$$/wbcSchema/Property/logoLabel=Logo"  description='$$$/wbcSchema/Property/logoDescription=Logo type and position'>
+			<!-- Choices should be provided for Closed Choice property -->
+				<xmp_choice raw_value="135" label="$$$/wbcSchema/Property/Choice_CPBlogo=CPMC Poland [CPB 135]"/>
+
+				<xmp_choice raw_value="75" label="$$$/wbcSchema/Property/Choice_CPYlogo=CPMC Ukraine [CPY 75]"/>
+
+				<xmp_choice raw_value="-105" label="$$$/wbcSchema/Property/Choice_CPKlogo=CPMC Czech Republic [CPK -105]"/>
+
+				<xmp_choice raw_value="20" label="$$$/wbcSchema/Property/Choice_CPSlogo=CPMC Spain [CPS 20]"/>
+			
+				<xmp_choice raw_value="-165" label="$$$/wbcSchema/Property/Choice_CPFlogo=CPMC France [CPF -165]"/>
+			
+				<xmp_choice raw_value="0" label="$$$/wbcSchema/Property/Choice_otherLogo=Logo in artwork [CP or other]"/>
+			
+				<xmp_choice raw_value="-0" label="$$$/wbcSchema/Property/Choice_noLogo=No logo [no print]"/>
+		</xmp_property>
+		
+		<xmp_property name='sapDescription' category='external' type='text' label="$$$/wbcSchema/Property/sapDescriptionLabel=Description"  description='$$$/wbcSchema/Property/SAPDescription=Aditional Important Informations'/>
+	
+	</xmp_schema> <!-- Schema Definition ends here -->
+  
+  
+</xmp_definitions>

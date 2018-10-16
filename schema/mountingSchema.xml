@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ADOBE SYSTEMS INCORPORATED
+
+ Copyright 2014 Adobe Systems Incorporated
+
+ All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in accordance
+with the terms of the Adobe license agreement accompanying it. If you have received
+this file from a source other than Adobe, then your use, modification, or distribution
+of it requires the prior written permission of Adobe.
+	
+-->
+<xmp_definitions>
+  <!-- Defining the namespace and prefix of the schema --> 	
+	<xmp_schema prefix='mount' namespace='http://my.mountSchema.namespace/' label='Mounting Schema' description='Schema for mounting'>
+		
+		<!-- Starting defining the properties, for definition of different attribute please refer documentation -->
+		
+		<xmp_property name='plateName' category='external' type='closedchoice' element_type='text' label="$$$/mount/Property/plateNameInputLabel=Name"  description='$$$/mount/Property/plateNamePrintInputDescription=Descriptive name of printing plate'>
+			<xmp_choice raw_value="['LTG', 1160, 1030]" label="$$$/mount/Property/printingStartChoiceLTG=LTG [1160x1030 mm]"/>
+			<xmp_choice raw_value="['UV', 1220, 1095]" label="$$$/mount/Property/printingStartChoiceUV=UV [1220x1095 mm]"/>
+		</xmp_property>
+		
+		<xmp_property name='bottomPrint' category='external' type='boolean' label="$$$/mount/Property/bottomPrintInputLabel=Printing side"  description='$$$/mount/Property/bottomPrintInputDescription=Bottom printing is mirrored'/>
+		<!--
+		<xmp_property name='plateWidth' category='external' type='real' label="$$$/mount/Property/plateWidthInputLabel=Width"  description='$$$/mount/Property/plateWidthPrintInputDescription=Width of printing plate'/>
+		
+		<xmp_property name='plateHeight' category='external' type='real' label="$$$/mount/Property/plateHightInputLabel=Hight"  description='$$$/mount/Property/plateHightPrintInputDescription=Hight of printing plate'/>
+		-->
+		<xmp_property name='printingStart' category='external'  type='openchoice' element_type='real' 
+		label="$$$/mount/Property/printingStartInputLabel=Printing start" description='$$$/mount/Property/printingStartDescription=Distance from bottom of plate'>
+			<xmp_choice raw_value="40.5" label="$$$/mount/Property/printingStartChoiceLTG=LTG [40.5 mm]"/>
+			<xmp_choice raw_value="57.5" label="$$$/mount/Property/printingStartChoiceUV=UV [57.5 mm]"/>
+		</xmp_property>
+		
+		<xmp_property name='gripperWidth' category='external'  type='openchoice' element_type='real' 
+		label="$$$/mount/Property/gripperWidthInputLabel=Gripper Width" description='$$$/mount/Property/gripperWidthDescription=Unprintable area of sheet'>
+			<xmp_choice raw_value="4.5" label="$$$/mount/Property/printingStartChoiceLTG=LTG [4.5 mm]"/>
+			<xmp_choice raw_value="5" label="$$$/mount/Property/printingStartChoiceUV=UV [5 mm]"/>
+		</xmp_property>
+		
+		<xmp_property name='sheetWidth' category='external' type='real' label="$$$/mount/Property/sheetWidthInputLabel=Width"  description='$$$/mount/Property/sheetWidthPrintInputDescription=Width of sheet'/>
+		
+		<xmp_property name='sheetHeight' category='external' type='real' label="$$$/mount/Property/sheetHeightInputLabel=Height"  description='$$$/mount/Property/sheetHeightPrintInputDescription=Height of sheet'/>
+		
+		<xmp_property name='gridRows' category='external' type='integer' min='1' label="$$$/mount/Property/gridRowsInputLabel=Grid rows"  description='$$$/mount/Property/gridRowsPrintInputDescription=Grid rows of sheet'/>
+		
+		<xmp_property name='gridColumns' category='external' type='integer' min='1' label="$$$/mount/Property/gridColumnsInputLabel=Grid columns"  description='$$$/mount/Property/gridColumnsPrintInputDescription=Grid columns of sheet'/>
+		
+		<xmp_property name='stepCount' category='external' type='integer' min='1' label="$$$/mount/Property/stepCountInputLabel=Count"  description='$$$/mount/Property/stepCountPrintInputDescription=Count of punch steps'/>
+		
+		<xmp_property name='stepDirection' category='external'  type='closedchoice' element_type='text' 
+		label="$$$/mount/Property/stepDirectionInputLabel=Direction" description='$$$/mount/Property/stepDirectionDescription=Direction of punch steps'>
+			<xmp_choice raw_value="X" label="$$$/mount/Property/stepDirectionChoiceX=-left HORIZONTAL +right"/>
+			<xmp_choice raw_value="Y" label="$$$/mount/Property/stepDirectionChoiceY=-up VERTICAL +down"/>
+		</xmp_property>
+		
+		<xmp_property name='stepWidth' category='external' type='real' label="$$$/mount/Property/stepWidthInputLabel=Width"  description='$$$/mount/Property/stepWidthPrintInputDescription=Width of punch step'/>
+		
+		<xmp_property name='cutWidth' category='external' type='real' min='0' label="$$$/mount/Property/cutWidthInputLabel=Cut width"  description='$$$/mount/Property/cutWidthPrintInputDescription=Cutting width'/>
+		
+		<xmp_property name='cutHeight' category='external' type='real' min='0' label="$$$/mount/Property/cutHeightInputLabel=Cut height"  description='$$$/mount/Property/cutHeightPrintInputDescription=Cutting height'/>
+		
+		<xmp_property name='bleed' category='external' type='real' min='0' label="$$$/mount/Property/bleedInputLabel=Bleed"  description='$$$/mount/Property/bleedPrintInputDescription=Cutting addition'/>
+		
+		<xmp_property name='punch' category='external' type='seq' element_type='punch_type' label='$$$/mount/Property/punchToolArrOfStructInputLabel=Punch tool' description='$$$/mount/Property/punchToolArrOfStructDescription=Array of punches'/>
+		
+		<xmp_property name='marks' category='external' type='seq' element_type='marks_type' label='$$$/mount/Property/marksArrOfStructInputLabel=Smart marks' description='$$$/mount/Property/marksArrOfStructDescription=Array of smart marks'/>
+		
+	</xmp_schema> <!-- Schema Definition ends here -->
+  
+	<!-- Defining Composed Types -->
+	<xmp_type name='punch_type' description='$$$/mount/Property/punchTypeDescription=Punch tool structure' label='$$$/mount/Property/punchTypeLabel=Punch tool'>
+		
+		<xmp_field name='punchNumber' prefix='punch' namespace='http://my.mountSchema.namespace/punch#' type='integer' min='1' label='$$$/punch/Property/punchNumberLabel=Punch number' description='$$$/punch/Property/punchNumberDescription=Start punch number'/>
+		
+		<xmp_field name='refObject' prefix='punch' namespace='http://my.mountSchema.namespace/punch#' type='openchoice' element_type='text' label='$$$/punch/Property/refObjectLabel=Reference object' description='$$$/punch/Property/refObjectDescription=Reference object'>
+			
+			<xmp_choice raw_value="grid" label="$$$/punch/Property/Choice_strip=grid"/>
+			<xmp_choice raw_value="punch[0].bleed" label="$$$/punch/Property/Choice_punchBleed=punch[0].bleed"/>
+			<xmp_choice raw_value="punch[0].cut" label="$$$/punch/Property/Choice_oneUpCut=punch[0].cut"/>
+			
+		</xmp_field>
+		
+		<xmp_field name='refPoint' prefix='punch' namespace='http://my.mountSchema.namespace/punch#' type='closedchoice' element_type='text' label='$$$/punch/Property/refPointLabel=Reference point' description='$$$/punch/Property/refPointDescription=Reference point of reference object'>
+			
+			<xmp_choice raw_value="1" label="$$$/punch/Property/Choice_topLeft=[1] Top Left"/>
+			<xmp_choice raw_value="2" label="$$$/punch/Property/Choice_topCenter=[2] Top Center"/>
+			<xmp_choice raw_value="3" label="$$$/punch/Property/Choice_topLeft=[3] Top Right"/>
+			<xmp_choice raw_value="4" label="$$$/punch/Property/Choice_centerLeft=[4] Center Left"/>
+			<xmp_choice raw_value="5" label="$$$/punch/Property/Choice_center=[5] Center"/>
+			<xmp_choice raw_value="6" label="$$$/punch/Property/Choice_centerRight=[6] Center Right"/>
+			<xmp_choice raw_value="7" label="$$$/punch/Property/Choice_bottomLeft=[7] Bottom Left"/>
+			<xmp_choice raw_value="8" label="$$$/punch/Property/Choice_topCenter=[8] Bottom Center"/>
+			<xmp_choice raw_value="9" label="$$$/punch/Property/Choice_topLeft=[9] Bottom Right"/>
+			
+		</xmp_field>
+		
+		<xmp_field name='dieHorizontalOffset' prefix='punch' namespace='http://my.mountSchema.namespace/punch#' type='real' label='$$$/punch/Property/dieHorizontalOffsetLabel=Horizontal offset' description='$$$/punch/Property/dieHorizontalOffsetDescription=Horizontal distance'/>
+		
+		<xmp_field name='dieVerticalOffset' prefix='punch' namespace='http://my.mountSchema.namespace/punch#' type='real' label='$$$/punch/Property/dieVerticalOffsetLabel=Vertical offset' description='$$$/punch/Property/dieVerticalOffsetDescription=Vertical distance'/>
+		
+		<xmp_field name='punchPoint' prefix='punch' namespace='http://my.mountSchema.namespace/punch#' type='closedchoice' element_type='text' label='$$$/punch/Property/punchPointLabel=Punch reference point' description='$$$/punch/Property/ownPointDescription=Punch reference point'>
+			
+			<xmp_choice raw_value="1" label="$$$/punch/Property/Choice_topLeft=[1] Top Left"/>
+			<xmp_choice raw_value="2" label="$$$/punch/Property/Choice_topCenter=[2] Top Center"/>
+			<xmp_choice raw_value="3" label="$$$/punch/Property/Choice_topLeft=[3] Top Right"/>
+			<xmp_choice raw_value="4" label="$$$/punch/Property/Choice_centerLeft=[4] Center Left"/>
+			<xmp_choice raw_value="5" label="$$$/punch/Property/Choice_center=[5] Center"/>
+			<xmp_choice raw_value="6" label="$$$/punch/Property/Choice_centerRight=[6] Center Right"/>
+			<xmp_choice raw_value="7" label="$$$/punch/Property/Choice_bottomLeft=[7] Bottom Left"/>
+			<xmp_choice raw_value="8" label="$$$/punch/Property/Choice_topCenter=[8] Bottom Center"/>
+			<xmp_choice raw_value="9" label="$$$/punch/Property/Choice_topLeft=[9] Bottom Right"/>
+			
+		</xmp_field>
+	  						
+		<xmp_field name='punchAngle' prefix='punch' namespace='http://my.mountSchema.namespace/punch#' type='openchoice' element_type='real' label='$$$/punch/Property/punchAngleLabel=Punch rotation angle' description='$$$/punch/Property/punchAngleDescription=Punch angle'>
+			<xmp_choice raw_value="0" label="$$$/mount/Property/Choice_0=0"/>
+			<xmp_choice raw_value="90" label="$$$/mount/Property/Choice_0=90"/>
+			<xmp_choice raw_value="-90" label="$$$/mount/Property/Choice_0=-90"/>
+			<xmp_choice raw_value="180" label="$$$/mount/Property/Choice_0=180"/>
+		</xmp_field>
+		
+		<xmp_field name='duplicates' prefix='punch' namespace='http://my.mountSchema.namespace/punch#' type='integer' min='1' label="$$$/mount/Property/duplicatesInputLabel=Punch duplicates"  description='$$$/mount/Property/duplicatesPrintInputDescription=End punch number'/>
+		
+		<xmp_field name='duplicateDirection' prefix='punch' namespace='http://my.mountSchema.namespace/punch#' type='closedchoice' element_type='text' 
+		label="$$$/mount/Property/duplicateDirectionInputLabel=Duplicate direction" description='$$$/mount/Property/duplicateDirectionDescription=Direction of punch duplication'>
+			<xmp_choice raw_value="X" label="$$$/mount/Property/stepDirectionChoiceX=-left HORIZONTAL +right"/>
+			<xmp_choice raw_value="Y" label="$$$/mount/Property/stepDirectionChoiceY=-up VERTICAL +down"/>
+		</xmp_field>
+		
+		<xmp_field name='duplicateStep' prefix='punch' namespace='http://my.mountSchema.namespace/punch#' type='real' label="$$$/mount/Property/duplicateStepInputLabel=Duplicate step"  description='$$$/mount/Property/stepWidthPrintInputDescription=Step of punch duplication'/>
+		
+	</xmp_type>
+	
+	
+	
+	
+	
+	<xmp_type name='marks_type' description='$$$/mount/Property/marksTypeDescription=Pre-press marks structure' label='$$$/mount/Property/marksTypeLabel=Pre-press marks'>
+		
+		<xmp_field name='markName' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='text' label='$$$/mark/Property/markNameLabel=Name' description='$$$/mark/Property/markNameDescription=Mark name'/>
+		
+		<xmp_field name='markObject' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='openchoice' element_type='text' label='$$$/mark/Property/markObjectLabel=Type' description='$$$/mark/Property/refObjectDescription=Type of smart mark object'>
+			
+			<xmp_choice raw_value="corner" label="$$$/mark/Property/Choice_corner=corner"/>
+			<xmp_choice raw_value="crop" label="$$$/mark/Property/Choice_crop=crop"/>
+			<xmp_choice raw_value="cut" label="$$$/mark/Property/Choice_cut=cut"/>
+			<xmp_choice raw_value="passer" label="$$$/mark/Property/Choice_passer=passer"/>
+			<xmp_choice raw_value="logo" label="$$$/mark/Property/Choice_logo=logo"/>
+			<xmp_choice raw_value="number" label="$$$/mark/Property/Choice_number=number"/>
+			<xmp_choice raw_value="rectangle" label="$$$/mark/Property/Choice_rectangle=rectangle"/>
+			<xmp_choice raw_value="elipse" label="$$$/mark/Property/Choice_elipse=elipse"/>
+			<xmp_choice raw_value="line" label="$$$/mark/Property/Choice_line=line"/>
+			<xmp_choice raw_value="text" label="$$$/mark/Property/Choice_text=text"/>
+			<xmp_choice raw_value="link" label="$$$/mark/Property/Choice_link=link"/>
+			<xmp_choice raw_value="library" label="$$$/mark/Property/Choice_library=library"/>
+			
+		</xmp_field>
+		
+		<xmp_field name='markWidth' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='real' label='$$$/mark/Property/markWidthLabel=Mark width' description='$$$/mark/Property/markWidthDescription=Container width' />
+		
+		<xmp_field name='markHeight' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='real' label='$$$/mark/Property/markHeightLabel=Mark height' description='$$$/mark/Property/markHeightDescription=Container height'/>
+		
+		<xmp_field name='refObject' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='openchoice' element_type='text' label='$$$/mark/Property/refObjectLabel=Reference object' description='$$$/mark/Property/refObjectDescription=Reference object'>
+			
+			<xmp_choice raw_value="sheet" label="$$$/mark/Property/Choice_sheet=sheet"/>
+			<xmp_choice raw_value="grid" label="$$$/mark/Property/Choice_strip=grid"/>
+			<xmp_choice raw_value="oneUp[0, 0].bleed" label="$$$/mark/Property/Choice_oneUpBleed=oneUp[0, 0].bleed"/>
+			<xmp_choice raw_value="oneUp[0, 0].cut" label="$$$/mark/Property/Choice_oneUpCut=oneUp[0, 0].cut"/>
+			
+		</xmp_field>
+		
+		<xmp_field name='refPoint' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='closedchoice' element_type='text' label='$$$/mark/Property/refPointLabel=Reference point' description='$$$/mark/Property/refPointDescription=Reference point of reference object'>
+			
+			<xmp_choice raw_value="1" label="$$$/mark/Property/Choice_topLeft=[1] Top Left"/>
+			<xmp_choice raw_value="2" label="$$$/mark/Property/Choice_topCenter=[2] Top Center"/>
+			<xmp_choice raw_value="3" label="$$$/mark/Property/Choice_topLeft=[3] Top Right"/>
+			<xmp_choice raw_value="4" label="$$$/mark/Property/Choice_centerLeft=[4] Center Left"/>
+			<xmp_choice raw_value="5" label="$$$/mark/Property/Choice_center=[5] Center"/>
+			<xmp_choice raw_value="6" label="$$$/mark/Property/Choice_centerRight=[6] Center Right"/>
+			<xmp_choice raw_value="7" label="$$$/mark/Property/Choice_bottomLeft=[7] Bottom Left"/>
+			<xmp_choice raw_value="8" label="$$$/mark/Property/Choice_topCenter=[8] Bottom Center"/>
+			<xmp_choice raw_value="9" label="$$$/mark/Property/Choice_topLeft=[9] Bottom Right"/>
+			
+		</xmp_field>
+		
+		<xmp_field name='dieHorizontalOffset' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='real' label='$$$/mark/Property/dieHorizontalOffsetLabel=Horizontal offset' description='$$$/mark/Property/dieHorizontalOffsetDescription=Horizontal distance'/>
+		
+		<xmp_field name='dieVerticalOffset' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='real' label='$$$/mark/Property/dieVerticalOffsetLabel=Vertical offset' description='$$$/mark/Property/dieVerticalOffsetDescription=Vertical distance'/>
+		
+		<xmp_field name='markPoint' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='closedchoice' element_type='text' label='$$$/mark/Property/markPointLabel=Mark reference point' description='$$$/mark/Property/ownPointDescription=mark reference point'>
+			
+			<xmp_choice raw_value="1" label="$$$/mark/Property/Choice_topLeft=[1] Top Left"/>
+			<xmp_choice raw_value="2" label="$$$/mark/Property/Choice_topCenter=[2] Top Center"/>
+			<xmp_choice raw_value="3" label="$$$/mark/Property/Choice_topLeft=[3] Top Right"/>
+			<xmp_choice raw_value="4" label="$$$/mark/Property/Choice_centerLeft=[4] Center Left"/>
+			<xmp_choice raw_value="5" label="$$$/mark/Property/Choice_center=[5] Center"/>
+			<xmp_choice raw_value="6" label="$$$/mark/Property/Choice_centerRight=[6] Center Right"/>
+			<xmp_choice raw_value="7" label="$$$/mark/Property/Choice_bottomLeft=[7] Bottom Left"/>
+			<xmp_choice raw_value="8" label="$$$/mark/Property/Choice_topCenter=[8] Bottom Center"/>
+			<xmp_choice raw_value="9" label="$$$/mark/Property/Choice_topLeft=[9] Bottom Right"/>
+			
+		</xmp_field>
+	  						
+		<xmp_field name='markAngle' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='openchoice' element_type='real' label='$$$/mark/Property/markAngleLabel=Mark rotation angle' description='$$$/mark/Property/markAngleDescription=mark angle'>
+			<xmp_choice raw_value="0" label="$$$/mount/Property/Choice_0=0"/>
+			<xmp_choice raw_value="90" label="$$$/mount/Property/Choice_0=90"/>
+			<xmp_choice raw_value="-90" label="$$$/mount/Property/Choice_0=-90"/>
+			<xmp_choice raw_value="180" label="$$$/mount/Property/Choice_0=180"/>
+		</xmp_field>
+		
+		<xmp_field name='duplicates' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='integer' min='1' label="$$$/mount/Property/duplicatesInputLabel=Mark duplicates"  description='$$$/mount/Property/duplicatesPrintInputDescription=End mark number'/>
+		
+		<xmp_field name='duplicateDirection' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='closedchoice' element_type='text' 
+		label="$$$/mount/Property/duplicateDirectionInputLabel=Duplicate direction" description='$$$/mount/Property/duplicateDirectionDescription=Direction of mark duplication'>
+			<xmp_choice raw_value="X" label="$$$/mount/Property/stepDirectionChoiceX=-left HORIZONTAL +right"/>
+			<xmp_choice raw_value="Y" label="$$$/mount/Property/stepDirectionChoiceY=-up VERTICAL +down"/>
+		</xmp_field>
+		
+		<xmp_field name='duplicateStep' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='real' label="$$$/mount/Property/duplicateStepInputLabel=Duplicate step"  description='$$$/mount/Property/stepWidthPrintInputDescription=Step of mark duplication'/>
+		
+		<xmp_field name='ink' prefix='mark' namespace='http://my.mountSchema.namespace/mark#' type='openchoice' element_type='text' label='$$$/mark/Property/inkLabel=Ink' description='$$$/mark/Property/inkDescription=Smart mark ink reference'>
+			
+			<xmp_choice raw_value="none" label="$$$/mark/Property/Choice_none=none"/>
+			<xmp_choice raw_value="registration" label="$$$/mark/Property/Choice_registration=registration"/>
+			<xmp_choice raw_value="paper" label="$$$/mark/Property/Choice_paper=paper"/>
+			<xmp_choice raw_value="black" label="$$$/mark/Property/Choice_black=black"/>
+			<xmp_choice raw_value="darkest" label="$$$/mark/Property/Choice_darkest=darkest"/>
+			<xmp_choice raw_value="lightest" label="$$$/mark/Property/Choice_lightest=lightest"/>
+			<xmp_choice raw_value="rule" label="$$$/mark/Property/Choice_rule=specific rule"/>
+			
+		</xmp_field>
+		
+	</xmp_type>
+  
+</xmp_definitions>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ADOBE SYSTEMS INCORPORATED
+
+ Copyright 2014 Adobe Systems Incorporated
+
+ All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in accordance
+with the terms of the Adobe license agreement accompanying it. If you have received
+this file from a source other than Adobe, then your use, modification, or distribution
+of it requires the prior written permission of Adobe.
+-->
+
+<views xmlns="http://ns.adobe.com/metadata/ui/1.0/"> <!--Including the default namespace is a must -->
+<!-- Views can have multiple views (panels) -->
+	
+	<view
+		xmlns:prePress="http://my.prepressSchema.namespace/"
+		xmlns:wbcSchema="http://my.wbcSchema.namespace/"
+		name="prepress"
+		label="$$$/prePress/Property/prePressViewLabel=PrePress"
+		description="$$$/prePress/Property/prePressViewDescription=View of PrePress settings">
+		
+		<section label="Artwork" type="labelled" >
+			<property name="prePress:artworkAngle" />
+		</section>
+		<section label="Punch Number" type="labelled" >
+			<property name="prePress:punchNumAngle" />
+			<property name="prePress:punchNumPrint" widget="dropdown" >
+				<choice label="Unknown" value=""/> <!-- empty value will delete the property -->
+				<choice label="ON" value="True"/>
+				<choice label="OFF" value="False"/>
+			</property>
+		</section>
+		<section label="Logo" type="labelled" >
+			<!-- <property name="prePress:logoAngle" readOnly="true"/>
+			<property name="prePress:logoPrint" widget="dropdown" >
+				<choice label="Unknown" value=""/> --> <!-- empty value will delete the property -->
+			<!--	<choice label="ON" value="True"/>
+				<choice label="OFF" value="False"/>
+			</property> -->
+			<property name="wbcSchema:logo" readOnly="true"/>
+			<note fontSize="small" message="                                [ Set in WebCenter wiew ]"/>
+		</section>
+		<property name="prePress:smartInks" />
+		
+	</view>		
+	
+</views>

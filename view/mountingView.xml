@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ADOBE SYSTEMS INCORPORATED
+
+ Copyright 2014 Adobe Systems Incorporated
+
+ All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in accordance
+with the terms of the Adobe license agreement accompanying it. If you have received
+this file from a source other than Adobe, then your use, modification, or distribution
+of it requires the prior written permission of Adobe.
+-->
+
+<views xmlns="http://ns.adobe.com/metadata/ui/1.0/"> <!--Including the default namespace is a must -->
+<!-- Views can have multiple views (panels) -->
+	
+	<view
+		xmlns:mount="http://my.mountSchema.namespace/"
+		xmlns:wbcSchema="http://my.wbcSchema.namespace/"
+		name="mount"
+		label="$$$/mount/Property/mountViewLabel=Montage"
+		description="$$$/mount/Property/mountViewDescription=View of mounting settings">
+		
+		<section label="Plate" type="labelled" >
+			<property name="mount:plateName" />
+			<!--
+			<property name="mount:plateWidth" />
+			<property name="mount:plateHeight" />
+			-->
+			<property name="mount:printingStart" />
+			<property name="mount:gripperWidth" />
+		</section>
+		<section label="Sheet" type="labelled" >
+			<property name="mount:bottomPrint" widget="dropdown" >
+				<!-- <choice label="Unknown" value=""/> empty value will delete the property -->
+				<choice label="TOP" value="False"/>
+				<choice label="BOTTOM" value="True"/>
+			</property>
+			<property name="mount:sheetWidth" />
+			<property name="mount:sheetHeight" />
+			<property name="mount:gridRows" />
+			<property name="mount:gridColumns" />
+		</section>
+		<section label="Die-Set" type="labelled" >
+			<section label="Tool step" type="labelled" >
+				<property name="mount:stepCount" />
+				<property name="mount:stepDirection" />
+				<property name="mount:stepWidth" />
+			</section>
+			<section label="Cutting" type="labelled" >
+				<property name="mount:cutWidth" />
+				<property name="mount:cutHeight" />
+				<property name="mount:bleed" />
+			</section>
+			<property name="mount:punch" />
+		</section>
+		<property name="mount:marks" />
+	</view>		
+	
+</views>
