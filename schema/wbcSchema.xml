@@ -51,6 +51,8 @@ of it requires the prior written permission of Adobe.
 		
 		<xmp_property name='logo' category='external' type='closedchoice' element_type='real' label="$$$/wbcSchema/Property/logoLabel=Logo"  description='$$$/wbcSchema/Property/logoDescription=Logo type and position'>
 			<!-- Choices should be provided for Closed Choice property -->
+				<xmp_choice raw_value="-56.5" label="$$$/wbcSchema/Property/Choice_CPTlogo=CPMC Group [CPT 56,5]"/>
+				
 				<xmp_choice raw_value="135" label="$$$/wbcSchema/Property/Choice_CPBlogo=CPMC Poland [CPB 135]"/>
 
 				<xmp_choice raw_value="75" label="$$$/wbcSchema/Property/Choice_CPYlogo=CPMC Ukraine [CPY 75]"/>
