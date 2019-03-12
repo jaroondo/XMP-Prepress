@@ -26,6 +26,7 @@ of it requires the prior written permission of Adobe.
 			<property name="wbcSchema:projectName" />
 			<property name="wbcSchema:customerID" />
 			<property name="wbcSchema:projectNumber" />
+			<property name="wbcSchema:customersCode" />
 		</section>
 		<section label="Material" type="labelled">
 			<property name="wbcSchema:stbCode" />
@@ -33,7 +34,8 @@ of it requires the prior written permission of Adobe.
 			<property name="wbcSchema:finishing" />
 		</section>
 		<property name="wbcSchema:logo" />
-		<property name="wbcSchema:sapDescription" />	
+		<property name="wbcSchema:internalPlantCode" />
+		<property name="wbcSchema:sapDescription" multiLines="3"/>	
 		
 	</view>
 	
