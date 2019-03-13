@@ -53,7 +53,7 @@ of it requires the prior written permission of Adobe.
 		
 		<xmp_property name='logo' category='external' type='closedchoice' element_type='real' label="$$$/wbcSchema/Property/logoLabel=Logo"  description='$$$/wbcSchema/Property/logoDescription=Logo type and position'>
 			<!-- Choices should be provided for Closed Choice property -->
-				<xmp_choice raw_value="-56.5" label="$$$/wbcSchema/Property/Choice_CPTlogo=CPMC Group [CPT 56,5]"/>
+				<xmp_choice raw_value="-56.5" label="$$$/wbcSchema/Property/Choice_CPTlogo=CP logo YES. CPMC Group [CPT 56,5]"/>
 				
 				<xmp_choice raw_value="135" label="$$$/wbcSchema/Property/Choice_CPBlogo=CPMC Poland [CPB 135]"/>
 
@@ -65,9 +65,11 @@ of it requires the prior written permission of Adobe.
 			
 				<xmp_choice raw_value="-165" label="$$$/wbcSchema/Property/Choice_CPFlogo=CPMC France [CPF -165]"/>
 			
-				<xmp_choice raw_value="0" label="$$$/wbcSchema/Property/Choice_otherLogo=CP logo YES. Logo in artwork [CP or other]"/>
+				<xmp_choice raw_value="0" label="$$$/wbcSchema/Property/Choice_otherLogo=CP logo YES. Logo in artwork."/>
 			
 				<xmp_choice raw_value="-0" label="$$$/wbcSchema/Property/Choice_noLogo=CP logo NO. No logo [no print]"/>
+
+				<xmp_choice raw_value="+0" label="$$$/wbcSchema/Property/Choice_noLogo=CP logo NO. Other logo in artwork."/>
 		</xmp_property>
 		
 		<xmp_property name='internalPlantCode' category='external' type='text' label="$$$/wbcSchema/Property/internalPlantCodeLabel=Internal Plant Code"  description='$$$/wbcSchema/Property/internalPlantCode=Time Stamp'/>
